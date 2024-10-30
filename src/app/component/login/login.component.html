@@ -1,0 +1,168 @@
+
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<br>
+<body>
+<div class="container">
+  <div style="border-top: #0e3151 0.35em solid" class="container1">
+    <h1>Mergentech Staj Başvuru Formu</h1>
+  </div>
+  <form  >
+    <div class="form-group">
+      <label for="name">Adınız Soyadınız:</label>
+      <input  type="text" id="name"  name="name"  [(ngModel)]="form.ad_soyad" required >
+    </div>
+    <div class="form-group">
+      <label for="email">Mail Adresi:</label>
+      <input type="text" placeholder="...@....com" id="email" name="email" [(ngModel)]="form.email" required>
+    </div>
+    <div>
+      <span class="font-bold block mb-1">Telefon Numarası:</span>
+      <p-inputMask
+        mask="(999) 999-9999"
+        [(ngModel)]="value2" [style]="{'width':'100%','padding':'10px'}"
+        placeholder="(999) 999-9999"/>
+    </div>
+    <div class="form-group">
+      <br>
+      <label for="university">Üniversite:</label>
+      <input type="text" id="university" name="university" [(ngModel)]="form.universite" required [pKeyFilter]="'alpha'">
+    </div>
+
+    <div class="form-group">
+      <label for="department">Bölüm:</label>
+      <input type="text" id="department" name="department" [(ngModel)]="form.bolum" required [pKeyFilter]="'alpha'">
+    </div>
+
+    <div class="form-group">
+      <label for="github">GitHub Linki:</label>
+      <input type="url" id="github" name="github" [(ngModel)]="form.github_link">
+    </div>
+
+    <div class="form-group">
+      <label for="cv">CV Linki:</label>
+      <input type="url" id="cv" name="cv" [(ngModel)]="form.cv_link" required>
+    </div>
+    <div class="form-group">
+      <label for="linkedln">Linkedln Linki:</label>
+      <input type="url" id="linkedln" name="linkedln" [(ngModel)]="form.linkedin_link" required>
+    </div>
+
+  <div class="card" style="text-align: center;">
+    <div class="col-12">
+      <h2>Programlama Dilleri</h2>
+      <p-table [value]="languages"
+               [tableStyle]="{ 'min-width': '50rem','width': '50%', 'margin': '0 auto', 'border': '1px solid #000', 'margin-bottom':'2em' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Diller</th>
+            <th [style]="{'font-size':'larger','color':'steelblue','border':'1px solid black','text-align':'center'}"
+                *ngFor="let rakam of rakamlar">{{ rakam.id }}
+            </th>
+
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-language>
+          <tr>
+            <td>{{ language.name }}</td>
+            <td style="text-align: center;"
+                *ngFor="let rakam of rakamlar">
+              <p-radioButton
+                [inputId]="language.key + '-' + rakam.id"
+                [name]="language.key"
+                [value]="rakam.id"
+                [(ngModel)]="ratingsMap[language.key]"
+                (click)="denemeeee(language, rakam)"
+              ></p-radioButton>
+            </td>
+
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+
+  <div class="container1">
+    <p>Sınıfınız:</p>
+    <form class="flex flex-column gap-3 form-container" [formGroup]="formGroup">
+
+      <div *ngFor="let category of categories" class="field-checkbox">
+        <p-radioButton
+          [inputId]="category.key" (onClick)="denemeee(category.key)"
+          [value]="category" [(ngModel)]="deneme"
+          formControlName="selectedCategory"/>
+
+        <label [for]="category.key" class="ml-2">
+          {{ category.name }}
+          <div *ngIf="category.key == '5' && radioButtonGoster">
+
+            <input type="text" [style]="{'width': '40rem'}">
+          </div>
+
+        </label>
+      </div>
+    </form>
+  </div>
+  <div class="container1">
+    <p>Staj Tercihi</p>
+    <div class="flex justify-content-start">
+      <div class="flex flex-column gap-2">
+        <div *ngFor="let category2 of categories1" class="field-checkbox">
+          <p-checkbox
+            [(ngModel)]="selectedCategories" [inputId]="category2.key"
+            [label]="category2.name" (onChange)="denemeee2(category2)"
+            name="group"
+            [value]="category2.key"/>
+          <div *ngIf="(selectedCategories.includes('j') && checkboxButtonGoster && category2.key == 'j')">
+            <input type="text" class="ml-2" [style]="{'width': '80vh'}" [pKeyFilter]="'alpha'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container1">
+    <p>Staj Tarihi( Uygun Olanları İşaretleyiniz)
+    </p>
+    <div class="card3 flex justify-content-start gap-3">
+      <div class="flex flex-column gap-1">
+        <p-checkbox name="groupname" value="val1" label="1 Temmuz - 29 Temmuz"
+                    [(ngModel)]="selectedValues"></p-checkbox>
+        <br>
+        <p-checkbox name="groupname" value="val2" label="5 Ağustos - 2 Eylül" [(ngModel)]="selectedValues"></p-checkbox>
+      </div>
+    </div>
+  </div>
+  <div class="container1">
+    <p>Eskişehir ofisinde yüz yüze staj katılımı gösterebilirim.
+    </p>
+    <p-checkbox name="yüzyüze" value="value3" label="Kabul Ediyorum."></p-checkbox>
+  </div>
+  <div class="container1">
+    <p>Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni</p>
+    <a class="link" href="https://drive.google.com/file/d/18Vek7U8RhvqcRW05Qf7lohnXq7WK4iex/view?usp=sharing">Aydınlanma
+      Metni</a>
+  </div>
+  <div class="container1">
+    <p>Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni Kabulü
+    </p>
+    <p-checkbox name="yüzyüze" value="value4" label="Kabul Ediyorum."></p-checkbox>
+  </div>
+  <br>
+  <button type="submit">Başvur</button>
+  <br>
+  <button type="submit" class="hover:bg-gray-300 bg-gray-400">Temizle</button>
+  </form>
+</div>
+</body>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,90 @@
+.html, body {
+  height: 100%;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color:white;
+}
+.card{
+  border: 2px solid #1a5276;
+  background-color: steelblue;
+  border-radius: 10px;
+
+}
+.p-table {
+  border: 1px solid #000;
+}
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 10px solid #1a5276; /* Lacivert kenar rengi */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+
+}
+
+h1 {
+  text-align: center;
+  color: #1a5276; /* Lacivert başlık rengi */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type=text], input[type=url] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1a5276; /* Lacivert buton rengi */
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0e3151; /* Buton hover rengi */
+}
+.temizle1:hover{
+  background-color: #000000;
+
+}
+
+.p-inputmask {
+  width:20rem ;
+}
+.container1{
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #1a5276; /* Lacivert kenar rengi */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.link{
+  color:red;
+}

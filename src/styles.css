@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import 'primeflex/primeflex.scss';
+
+.img1{
+  width: 20px;
+  height:20px
+}
+.card1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.password1{
+  margin-top: 80px;
+
+}
+a{
+  text-decoration: none;
+  color: white;
+
+}
+html,
+body{
+  height: 100%;
+  margin: 0;
+}
+html{
+  font-size: 14px;
+}

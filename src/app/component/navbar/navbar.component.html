@@ -1,0 +1,66 @@
+
+              <!--<label><a routerLink="/register">Admin Çıkış</a></label>-->
+            
+
+           <!-- <div *ngIf="!authService.session" class="link" (click)="login()"><a routerLink="/home">Admin Giriş
+            </a></div>
+            <div *ngIf="authService.session" class="link" (click)="authService.session=undefined" ><a routerLink="/home">Admin Çıkış
+            </a></div>-->
+
+         
+        
+
+
+
+        
+
+
+<br>
+<br>
+
+
+<p-toolbar class="navbar"
+           styleClass="bg-gray-900 shadow-2"
+           [style]="{  'background-image': 'linear-gradient(to right, var(--primary-600), var(--bluegray-800))' }">
+  <ng-template pTemplate="start">
+    <a href="https://www.mergentech.com.tr/"> <img loading="lazy" decoding="async"
+                                                   class="alignnone size-full wp-image-2493"
+                                                   src="https://www.mergentech.com.tr/wp-content/uploads/2020/12/mergen-web-site-logo-150x40-1.png"
+                                                   width="150" height="40" data-wp-editing="1"></a>
+    <div>
+    <button
+      class="ml-7 p-jc-start p-link inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
+      <a href="https://www.mergentech.com.tr/">Anasayfa</a>
+    </button>
+    </div>
+    <button
+      class="p-link ml-6 inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
+      <a href="https://www.mergentech.com.tr/hakkimizda/">Hakkımızda</a>
+    </button>
+    <button
+      class="p-link ml-6  inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
+      <a href="https://www.mergentech.com.tr/iletisim/">İletişim</a>
+    </button>
+  </ng-template>
+  <ng-template pTemplate="center">
+    <div id="link1" class="flex flex-wrap gap-3">
+      <a routerLink="/home">
+        <p-button label="Kullanıcı Havuzu" severity="info"/>
+      </a>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="flex align-items-center gap-2">
+      <a routerLink="/home">
+        <p-button label="Admin Giriş" severity="info"/>
+      </a>
+    </div>
+  </ng-template>
+</p-toolbar>
+
+
+
+
+
+
+
